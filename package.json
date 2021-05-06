@@ -1,0 +1,32 @@
+{
+  "name": "try-react-rules-of-hooks-ppx",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "bundle": "esbuild ./source/Index.bs.js --outfile=www/js/bundle.js --bundle --sourcemap --target=chrome58,firefox57,safari11,edge16 --define:process.env.NODE_ENV='\"development\"'",
+    "bundle:watch": "yarn bundle --watch --color=true",
+    "dev-server": "PORT=5000 live-server ./www --host=localhost",
+    "bs:build": "NINJA_ANSI_FORCED=1 bsb -make-world -clean-world",
+    "bs:watch": "NINJA_ANSI_FORCED=1 bsb -make-world -clean-world -w",
+    "bs:clean": "bsb -clean-world",
+    "start": "yarn clean; yarn bs:clean; concurrently --names re,db,dev,js --kill-others yarn:bs:watch yarn:server yarn:dev-server yarn:bundle:watch",
+    "bundle:prod": "yarn bundle --minify --define:process.env.NODE_ENV='\"production\"'",
+    "clean": "rm -rf www/js"
+  },
+  "dependencies": {
+    "bs-platform": "^7.0.1",
+    "concurrently": "^6.0.0",
+    "esbuild": "^0.10.2",
+    "json-server": "^0.16.3",
+    "live-server": "^1.2.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "reason-react": "^0.9.1"
+  },
+  "browser": {
+    "fs": false,
+    "tty": false,
+    "constants": false,
+    "child_process": false
+  }
+}
