@@ -9,7 +9,7 @@
     "bs:build": "NINJA_ANSI_FORCED=1 bsb -make-world -clean-world",
     "bs:watch": "NINJA_ANSI_FORCED=1 bsb -make-world -clean-world -w",
     "bs:clean": "bsb -clean-world",
-    "start": "yarn clean; yarn bs:clean; concurrently --names re,db,dev,js --kill-others yarn:bs:watch yarn:server yarn:dev-server yarn:bundle:watch",
+    "start": "yarn clean; yarn bs:clean; concurrently --names re,db,dev,js --kill-others yarn:bs:watch yarn:dev-server yarn:bundle:watch",
     "bundle:prod": "yarn bundle --minify --define:process.env.NODE_ENV='\"production\"'",
     "clean": "rm -rf www/js"
   },
@@ -17,10 +17,10 @@
     "bs-platform": "^7.0.1",
     "concurrently": "^6.0.0",
     "esbuild": "^0.10.2",
-    "json-server": "^0.16.3",
     "live-server": "^1.2.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-rules-of-hooks-ppx": "^0.8.1",
     "reason-react": "^0.9.1"
   },
   "browser": {

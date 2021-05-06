@@ -1,5 +1,5 @@
 {
-  "name": "ahrefs-test",
+  "name": "try-react-rules-of-hooks-ppx",
   "reason": {
     "react-jsx": 3
   },
@@ -9,11 +9,6 @@
   "sources": [
     {
       "dir": "source",
-      "subdirs": true
-    },
-    {
-      "dir": "__tests__",
-      "type": "dev",
       "subdirs": true
     }
   ],
@@ -31,19 +26,9 @@
   "namespace": true,
   "refmt": 3,
   "bs-dependencies": [
-    "reason-react",
-    "@ahrefs/bs-emotion",
-    "decco",
-    "bs-fetch",
-    "bs-webapi"
-  ],
-  "bs-dev-dependencies": [
-    "bs-react-testing-library",
-    "@glennsl/bs-jest",
-    "bs-jest-dom"
+    "reason-react"
   ],
   "ppx-flags": [
-    "@davesnx/styled-ppx/styled-ppx",
-    "decco/ppx"
+    "react-rules-of-hooks-ppx/Bin.exe"
   ]
 }
